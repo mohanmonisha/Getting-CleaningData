@@ -52,7 +52,7 @@ names(data_filtered)<- c(mean_std_features_wlabel$V2,"activity","subject")
 
 # Add activity labels
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt")
-data$activity <- factor(data$activity, levels = activity_labels[,1], labels = activity_labels[,2])
+data_filtered$activity <- factor(data_filtered$activity, levels = activity_labels[,1], labels = activity_labels[,2])
 
 # Label variables
 names(data_filtered) <- gsub("^t", "time", names(data_filtered))
